@@ -122,8 +122,8 @@ const Contact = () => {
           {[ 
             { href: 'https://x.com/web3pest', Icon: X },
             { href: 'https://instagram.com/ian_the.creator', Icon: Instagram },
-            { href: 'https://dribbble.com/yourhandle', Icon: Dribbble },
-            { href: 'https://linkedin.com/in/yourhandle', Icon: LinkedinIcon },
+            { href: 'https://dribbble.com/chapelle-nnamami#', Icon: Dribbble },
+            { href: 'https://linkedin.com/in/iannnamani', Icon: LinkedinIcon },
             { href: 'https://github.com/ianth3creator', Icon: Github },
           ].map(({ href, Icon }, i) => (
             <motion.a
