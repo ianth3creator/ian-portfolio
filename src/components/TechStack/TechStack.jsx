@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styles from './TechStack.module.css';
 import { Icon } from '@iconify/react';
 import { FileStack } from 'lucide-react'; // ✅ Imported correctly
-import Particles from '../Particles/Particles';
+
 
 const TechStack = () => {
   const [darkMode, setDarkMode] = useState(false);

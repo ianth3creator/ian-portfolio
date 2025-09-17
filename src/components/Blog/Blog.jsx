@@ -5,7 +5,7 @@ import post1Image from '../../assets/images/post1.jpg';
 import post2Image from '../../assets/images/post2.jpg';
 import post3Image from '../../assets/images/post3.jpg';
 import { PencilLine } from 'lucide-react'; // ✅ Imported correctly
-import Particles from '../Particles/Particles';
+
 
 const Blog = () => {
   const posts = [
