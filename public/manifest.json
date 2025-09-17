@@ -1,6 +1,6 @@
 {
-  "short_name": "Ian Portfolio",
-  "name": "Ian Nnnamani portfolio",
+  "short_name": "Ian",
+  "name": "Ian Nnamani — Web Developer & UI Designer",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#00e5ff",
+  "background_color": "#0a0a0a",
+  "description": "Portfolio of Ian Nnamani, a full-stack developer and UI designer building beautiful digital experiences with React and Framer Motion."
 }
