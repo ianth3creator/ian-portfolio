@@ -1,0 +1,155 @@
+/* =============================
+   FULL TECH STACK PAGE
+   ============================= */
+.fullStack {
+  min-height: 100vh;
+  padding: 8rem 2rem;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  position: relative;
+}
+
+.fullStack .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* BACK BUTTON */
+.backButton {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.backBtn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: #00e5ff;
+  border: 1px solid rgba(0, 229, 255, 0.5);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.backBtn:hover {
+  background: rgba(0, 229, 255, 0.1);
+  transform: translateY(-2px);
+  border-color: #00e5ff;
+}
+
+/* TITLE & SUBTITLE */
+.fullStack h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  color: #00e5ff;
+  margin-bottom: 1rem;
+}
+
+.fullStack .subtitle {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #b8b8d0;
+  margin-bottom: 4rem;
+}
+
+/* TECH GRID */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* TECH CARD */
+.techCard {
+  background: rgba(16, 16, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.techCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: #00e5ff;
+}
+
+.techCard h3 {
+  font-size: 1.4rem;
+  color: #f0f0f0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.category {
+  font-size: 0.8rem;
+  color: #00e5ff;
+  font-weight: 600;
+  background: rgba(0, 229, 255, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #b8b8d0;
+  line-height: 1.7;
+  margin-top: 0.8rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .fullStack {
+    padding: 6rem 1rem;
+  }
+
+  .fullStack h1 {
+    font-size: 2.5rem;
+  }
+
+  .fullStack .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .techGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .techCard {
+    padding: 1.5rem;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .category {
+    margin-top: 0.3rem;
+  }
+}

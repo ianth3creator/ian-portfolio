@@ -1,0 +1,330 @@
+/* =============================
+   ABOUT SECTION STYLES
+   ============================= */
+.about {
+  padding: 8rem 2rem;
+  background: transparent; /* ← LET THE GRADIENT SHOW THROUGH */
+  color: #f0f0f0;
+  position: relative; /* ← CRITICAL FOR PARTICLES TO WORK */
+}
+
+.aboutContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.aboutText {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.aboutText h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  color: #00e5ff;
+  margin-bottom: 1rem;
+}
+
+.aboutText p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: #b8b8d0;
+}
+
+.skillsSection {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* =============================
+   LOCATION CARD
+   ============================= */
+.locationCard {
+  background: rgba(16, 16, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  flex: 1;
+  min-width: 300px;
+}
+
+.locationHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.locationHeader svg {
+  width: 16px;
+  height: 16px;
+  color: #00e5ff;
+}
+
+.locationHeader span {
+  font-size: 1rem;
+  color: #00e5ff;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0a0a0a;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.svgMap {
+  width: 100%;
+  height: 100%;
+}
+
+.mapOutline {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mapOutline:hover {
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
+}
+
+/* =============================
+   PIN ANIMATION
+   ============================= */
+.floatingPin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.pin {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* =============================
+   SKILLS GRID CARD
+   ============================= */
+.skillsCard {
+  background: rgba(16, 16, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  flex: 1;
+  min-width: 300px;
+}
+
+.skillsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skillsHeader svg {
+  width: 16px;
+  height: 16px;
+  color: #00e5ff;
+}
+
+.skillsHeader span {
+  font-size: 1rem;
+  color: #00e5ff;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  padding: 0.5rem 0;
+  max-height: 100px;
+}
+
+.scrollContainer {
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrollContent {
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #b8b8d0;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0.5rem;
+  border-radius: 20px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.skillItem:hover {
+  background: rgba(0, 229, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+}
+
+.plus {
+  color: #00e5ff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.7));
+  transition: all 0.3s ease;
+}
+
+.plus:hover {
+  filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.9));
+}
+
+/* =============================
+   FADE OUT EDGES (CRITICAL)
+   ============================= */
+.skillsList::before,
+.skillsList::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 1),
+    rgba(10, 10, 10, 0)
+  );
+}
+
+.skillsList::before {
+  left: 0;
+}
+
+.skillsList::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(10, 10, 10, 1),
+    rgba(10, 10, 10, 0)
+  );
+}
+
+/* =============================
+   PROFILE IMAGE — ROUNDED SQUARE, NOT CIRCLE
+   ============================= */
+.aboutImage {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.aboutImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.aboutImage img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.3);
+}
+
+/* =============================
+   PARTICLES — GLOBAL ANIMATION
+   ============================= */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 229, 255, 0.3);
+  border-radius: 50%;
+  animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-100px) rotate(180deg);
+    opacity: 0.7;
+  }
+}
+/* =============================
+   MOBILE IMAGE ADJUSTMENTS — CUSTOM CROPPED SHAPE
+   ============================= */
+@media (max-width: 768px) {
+  .aboutImage {
+    flex: none;
+    min-width: auto;
+    width: 140px;
+    height: 140px;
+    margin-top: 2rem;
+    order: 3;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 229, 255, 0.2);
+  }
+
+  .aboutImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 👈 This crops the image */
+    transition: transform 0.3s ease;
+  }
+
+  .aboutImage img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 229, 255, 0.3);
+  }
+}

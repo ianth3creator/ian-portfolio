@@ -1,0 +1,225 @@
+/* =============================
+   BLOG SECTION — GLASS CASE DISPLAY
+   ============================= */
+.blog {
+  padding: 8rem 2rem;
+
+  color: #f0f0f0;
+}
+
+.blog .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.blog h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #00e5ff;
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.blog .postsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+/* POST CARD — FLOATING GLASS CASE */
+.postCard {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.postCard:hover {
+  transform: translateY(-15px);
+}
+
+/* LINK WRAPPER */
+.projectLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* GLASS CASE CONTAINER */
+.glassCase {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 
+    0 0 30px rgba(0, 229, 255, 0.1),
+    inset 0 0 20px rgba(0, 229, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  margin-bottom: 1.5rem;
+  transition: all 0.4s ease;
+  will-change: transform;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* PROJECT IMAGE — FILL THE GLASS */
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.glassCase:hover .projectImage {
+  transform: scale(1.08);
+}
+
+/* GLASS OVERLAY — SOFT GLOW ON HOVER */
+.glassOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(0, 229, 255, 0.08),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.glassCase:hover .glassOverlay {
+  opacity: 1;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* POST TITLE */
+.postCard h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  color: #f0f0f0;
+  margin: 0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.1);
+}
+
+.postCard:hover h3 {
+  color: #00e5ff;
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+
+/* POST READ TIME */
+.postCard p {
+  font-size: 0.9rem;
+  color: #b8b8d0;
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .blog .postsGrid {
+    gap: 2rem;
+  }
+
+  .postCard {
+    min-width: 250px;
+  }
+
+  .glassCase {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog h2 {
+    font-size: 2.5rem;
+  }
+
+  .blog .postsGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .postCard {
+    min-width: 100%;
+    max-width: 350px;
+  }
+
+  .glassCase {
+    height: 220px;
+  }
+
+  .postCard h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog {
+    padding: 6rem 1rem;
+  }
+
+  .blog h2 {
+    font-size: 2rem;
+  }
+
+  .glassCase {
+    height: 200px;
+  }
+
+  .postCard h3 {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .modalImage {
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .closeButton {
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+}

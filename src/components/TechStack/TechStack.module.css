@@ -1,0 +1,260 @@
+/* =============================
+   TECH STACK CAROUSEL — DESKTOP + MOBILE GRID AUTO-SCROLL
+   ============================= */
+.techStack {
+  padding: 8rem 2rem;
+  background: transparent;
+}
+
+.techStack .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.techStack .container h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #00e5ff;
+}
+
+.techStack .container p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+/* === CAROUSEL CONTAINER — CRITICAL STRUCTURE === */
+.techStack .carouselContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  overflow: visible; /* ← FIXED: Changed from 'hidden' to 'visible' */
+}
+
+/* === FADE OUT EDGES — NEON GLOW VERSION === */
+.techStack .fadeLeft,
+.techStack .fadeRight {
+  position: absolute;
+  top: 0;
+  width: 150px; /* Wider fade for smooth transition */
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.7;
+}
+
+.techStack .fadeLeft {
+  left: -20px; /* Extend left of container */
+  background: linear-gradient(
+    to right,
+    rgba(0, 229, 255, 0.3),
+    rgba(0, 229, 255, 0)
+  );
+}
+
+.techStack .fadeRight {
+  right: -2px; /* Extend right of container */
+  background: linear-gradient(
+    to left,
+    rgba(0, 229, 255, 0.3),
+    rgba(0, 229, 255, 0)
+  );
+}
+
+/* === CAROUSEL === */
+.techStack .carousel {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  scroll-snap-type: x mandatory;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+  z-index: 5;
+}
+
+/* === HIDE SCROLLBAR FOR WEBKIT BROWSERS === */
+.techStack .carousel::-webkit-scrollbar {
+  height: 0 !important;
+  width: 0 !important;
+}
+
+.techStack .carousel::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.techStack .carousel::-webkit-scrollbar-thumb {
+  background: transparent !important;
+}
+
+/* === HIDE SCROLLBAR FOR FIREFOX === */
+.techStack .carousel {
+  scrollbar-width: none;
+}
+
+/* === SLIDE — CONTAINS MULTIPLE ITEMS === */
+.techStack .slide {
+  display: flex;
+  width: 100%;
+  scroll-snap-align: start;
+  gap: 2rem;
+  will-change: transform;
+}
+
+/* === TECH ITEM === */
+.techStack .techItem {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.techStack.dark .techItem {
+  background: #1a1a2e;
+  box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.techStack .techItem:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.techStack.dark .techItem:hover {
+  box-shadow: 0 15px 30px rgba(0, 229, 255, 0.4);
+  border-color: rgba(0, 229, 255, 0.6);
+}
+
+.techStack .icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  color: #00e5ff;
+}
+
+.techStack .techItem h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.techStack.dark .techItem h3 {
+  color: #f0f0f0;
+}
+
+.techStack .techItem p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.techStack.dark .techItem p {
+  color: #b8b8d0;
+}
+
+/* =============================
+   MOBILE: 2–3 ITEMS PER ROW — HORIZONTAL GROUP SCROLL
+   ============================= */
+@media (max-width: 768px) {
+  /* Reduce item size for mobile */
+  .techStack .techItem {
+    min-width: 140px;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .techStack .icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .techStack .techItem h3 {
+    font-size: 1rem;
+  }
+
+  .techStack .techItem p {
+    font-size: 0.8rem;
+  }
+
+  /* 🚀 Group 2–3 items per "slide" */
+  .techStack .slide {
+    flex-direction: row;
+    gap: 1rem;
+    min-width: 100vw;
+    scroll-snap-align: start;
+  }
+
+  /* Each slide contains 2–3 items */
+  .techStack .techItem {
+    flex: 0 0 calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
+  }
+
+  /* Fallback to 2 items on very small screens */
+  @media (max-width: 480px) {
+    .techStack .techItem {
+      flex: 0 0 calc(50% - 1rem);
+      max-width: calc(50% - 1rem);
+    }
+  }
+
+  /* Ensure scroll snaps and hides scrollbar */
+  .techStack .carousel {
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .techStack .carousel::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* =============================
+   RESPONSIVE — DESKTOP REMAINS UNCHANGED
+   ============================= */
+@media (min-width: 769px) {
+  /* Desktop remains untouched — no changes here */
+}
+
+/* =============================
+   FULL TECH STACK BUTTON CONTAINER
+   ============================= */
+.buttonContainer {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.fullStackButton {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(45deg, #00e5ff, #8b5cf6);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 229, 255, 0.4);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fullStackButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 229, 255, 0.6);
+}
